@@ -1,5 +1,3 @@
-// server/config/mongoose.js
-
 module.exports = function(db) {
 
     const mongoose = require('mongoose'),
