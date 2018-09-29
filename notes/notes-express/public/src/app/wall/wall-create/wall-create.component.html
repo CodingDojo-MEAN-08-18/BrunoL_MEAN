@@ -1,0 +1,13 @@
+<h4>Leave us a note!</h4>
+<form  (ngSubmit)="sendNewNote($event); formData.reset();" #formData='ngForm'>
+  <p class="errors" *ngIf="itext.touched && itext.invalid">{{itext.errors | error}}</p>
+  <textarea placeholder="Write your note here"
+     name="text"
+     required
+     minlength="3"
+     [(ngModel)] = "note.text"
+     #itext='ngModel'
+  ></textarea>
+  <input  *ngIf = "formData.valid" type="submit" value="Post"
+  >
+</form>

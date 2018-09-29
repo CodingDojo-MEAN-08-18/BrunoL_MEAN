@@ -1,0 +1,25 @@
+<h2>Games</h2>
+<nav *ngIf="games">
+  <a *ngFor="let game of games" routerLink="/status/games/{{game.num}}">Game {{game.num}}</a>
+  <!--<a routerLink="/status/games/1" [ngClass]="{'selected':game_num==1}">Game 1</a>
+   //ngClass not working because selected lives in status-game component
+  <a routerLink="/status/games/2" [ngClass]="{'selected':game_num==2}">Game 2</a>
+  <a routerLink="/status/games/3" [ngClass]="{'selected':game_num==3}">Game 3</a>-->
+</nav>
+<button (click)="generateGame()">
+New Game
+</button>
+
+<button (click)="deleteGames()">
+Delete all Games and RSVP's
+</button>
+
+
+<app-status-game
+*ngIf="games && games.length!=0"
+[rsvps]="rsvps"
+[game_num]="game_num"
+>
+
+</app-status-game>
+

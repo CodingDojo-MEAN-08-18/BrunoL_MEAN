@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>{{city.name}} Weather</legend>
+  <h3>{{city.name}}</h3>
+  <section id="results">
+
+    <article *ngIf="weather" id="weather">
+      <ul>
+        <li>Humidity: {{weather.main.humidity}}</li>
+        <li>Temperature (Average): {{weather.main.temp | KtoF}} </li>
+        <li>Temperature (High): {{weather.main.temp_max | KtoF}} </li>
+        <li>Temperature (Low): {{weather.main.temp_min | KtoF}} </li>
+        <li>Status: {{weather.weather[0].description | capFirst}}</li>
+      </ul>
+    </article>
+    <img id="map" src="{{img}}">
+
+  </section>
+  <button (click)="getWeather()" id="refresh">Refresh Weather</button>
+</fieldset>

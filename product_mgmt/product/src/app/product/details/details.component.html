@@ -1,0 +1,46 @@
+<section id="inputs">
+  <p>Product Name</p>
+  <p class="errors" *ngIf="iname.touched && iname.errors">{{iname.errors | error }}</p>
+  <p>
+  <input type="text" name="name"
+    [(ngModel)] = "product.name"
+    required
+    #iname='ngModel'
+  >
+  </p>
+
+  <p>Price</p>
+  <p class="errors" *ngIf="iprice.touched && iprice.errors">{{iprice.errors | error }}</p>
+  <p>
+  <input type="text" name="price"
+    [(ngModel)]="product.price"
+    required
+    pattern = '\d+(\.\d{1,2})?'
+    #iprice='ngModel'
+    >
+  </p>
+
+  <p>Image Link</p>
+  <p class="errors" *ngIf="iimg.touched && iimg.errors">{{iimg.errors | error }}</p>
+  <p>
+  <textarea name="img"
+    [(ngModel)]="product.img_url"
+    required
+    #iimg='ngModel'
+    ></textarea>
+
+  </p>
+</section>
+
+<section id ="img" *ngIf='product.img_url' >
+  <img src="{{product.img_url}}" alt="Image not found.">
+</section>
+
+<section id ="img" *ngIf='!product.img_url' >
+  <p>Image preview will appear here.</p>
+</section>
+
+
+<p></p>
+
+<button (click)="goBack($event)" class="w3-button w3-black">Cancel</button>

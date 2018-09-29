@@ -1,0 +1,10 @@
+<h1 class="w3-jumbo">Product List</h1>
+
+
+<a class="product w3-card"
+  *ngFor="let product of products" [routerLink]="['..', 'edit', product._id]"
+  >
+  <div><img src="{{product.img_url}}" alt="Image unavailable"></div>
+  <p>{{product.name}}</p>
+  <p>{{product.price | currency:'USD':true }}</p>
+</a>

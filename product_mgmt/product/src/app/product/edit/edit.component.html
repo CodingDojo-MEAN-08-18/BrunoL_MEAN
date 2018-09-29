@@ -1,0 +1,16 @@
+
+<section *ngIf="product">
+  <h1>Edit, Update, or Delete this Product</h1>
+  <form (submit)="updateProduct()">
+    <!-- need an ngIf on product
+    -->
+    <app-details [product]="product"></app-details>
+    <button (click)="deleteProduct()" class="w3-button w3-black">Delete</button>
+    <input type="submit" value="Save Changes" class="w3-button w3-black">
+  </form>
+</section>
+
+<section *ngIf="loaded && !product"> <!--TODO: create an error variable (eg this.error) -->
+  <h4>Oops! Invalid product Id Provided.</h4>
+  <a [routerLink]="['']">&larr; Go Back.</a>
+</section>

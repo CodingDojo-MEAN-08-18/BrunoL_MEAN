@@ -1,0 +1,23 @@
+img{
+  max-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+
+}
+.product{
+  height: 260px;
+  width: 260px;
+  padding: 8px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2em;
+  text-align: center;
+  text-decoration: none;
+}
+.product:hover{
+  box-shadow: silver 5px 5px 15px, silver -5px -5px 15px;
+}
+
+.product:hover p{
+  text-decoration: underline;
+}

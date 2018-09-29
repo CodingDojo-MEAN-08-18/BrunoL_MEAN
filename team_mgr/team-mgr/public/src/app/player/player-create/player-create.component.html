@@ -1,0 +1,13 @@
+<h3>Add a new Player</h3>
+<form (ngSubmit)="sendPlayer($event); formData.reset()" #formData="ngForm">
+  <p>Player Name</p>
+  <p><input type="text" name="name" [(ngModel)] = "player.name"></p>
+
+  <p>Preferred Position</p>
+  <p><input type="text" name="position" [(ngModel)] = "player.preferredPosition"></p>
+
+  <input type="submit" value="Create New Player">
+</form>
+
+
+{{player | json}}

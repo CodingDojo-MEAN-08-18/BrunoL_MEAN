@@ -1,0 +1,21 @@
+.note{
+  background-color: white;
+  outline: 1px solid darkgray;
+  font-family: Helvetica, serif;
+  margin: 0;
+  padding: 12px 8px
+}
+.ts{
+  display: block;
+  font-size: 70%;
+  color: gray;
+}
+.note:last-child{
+  margin-bottom: .5em;
+}
+section{
+  height: 90%;
+  overflow-y: auto;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+}

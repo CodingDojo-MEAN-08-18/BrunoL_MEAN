@@ -1,0 +1,31 @@
+fieldset{
+  width: 60vw;
+  margin: 0 auto;
+  padding: 2em;
+  font-family: "Helvetica", Arial, sans-serif
+}
+h3{
+  text-align: center;
+}
+#results{
+  height: 420px;
+}
+#weather, #map{
+  display: inline-block;
+  vertical-align: top;
+}
+#weather ul{
+  list-style: none;
+  padding: 0
+}
+#weather ul li{
+  margin-bottom: .5em
+}
+#map{
+  float: right;
+  border: 2px solid silver;
+}
+#refresh{
+  display: block;
+  float: bottom;
+}

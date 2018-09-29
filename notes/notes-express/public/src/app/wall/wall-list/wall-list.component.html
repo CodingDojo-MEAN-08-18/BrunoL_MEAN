@@ -1,0 +1,9 @@
+<h4>All Notes</h4>
+<section>
+
+  <p *ngFor="let note of notes" class="note">
+    <span class="ts">{{note.createdAt | date:'medium'}}</span>
+    {{note.text}}
+
+  </p>
+</section>

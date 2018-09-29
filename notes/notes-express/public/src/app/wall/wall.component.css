@@ -1,0 +1,14 @@
+app-wall-create, app-wall-list{
+  display: inline-block;
+  vertical-align: top;
+  /*border: 1px solid red;*/
+}
+app-wall-create{
+  margin-bottom: 8px;
+  width: 50%;
+}
+app-wall-list{
+  width: 45%;
+  height: 80%;
+}
+

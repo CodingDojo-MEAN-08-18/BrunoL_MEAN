@@ -1,0 +1,7 @@
+<h1>Dojo Weather</h1>
+<div id="nav-container">
+  <ul>
+    <li *ngFor='let city of cities' [routerLink]="['',city.code]">{{city.name}}</li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
