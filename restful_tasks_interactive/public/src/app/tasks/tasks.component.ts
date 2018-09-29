@@ -18,6 +18,7 @@ export class TasksComponent implements OnInit {
     this.getTasks();
   }
 
+  //Rembember for next app
    getTasks(): void {
     this.taskService.getTasks()
       .subscribe(tasks => this.tasks = tasks);
