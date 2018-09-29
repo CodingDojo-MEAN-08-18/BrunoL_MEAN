@@ -18,8 +18,7 @@ const userSchema = new Schema({
     required: [true, 'Email address is required'],
     validator: {
       validator(value){
-        // this will return a boolean
-        return validator.isEmail(value); // <- awesome
+        return validator.isEmail(value); 
       }
     },
   },
@@ -41,8 +40,6 @@ userSchema.pre('save', function(next){
     return next(); // skip saving
   } 
   
-  // otherwise the password has been edited and so we need to hash the password
-  // using normal bcrypt (uses a callback) because bcrypt-as-promised will not install on my machine (python error..?)
   // bcrypt documentation: https://www.npmjs.com/package/bcrypt#to-hash-a-password
   bcrypt.hash(this.password, 10, (error, hash) =>{ // second parameter is "salt rounds"
     console.log('hashing password', this.password);
