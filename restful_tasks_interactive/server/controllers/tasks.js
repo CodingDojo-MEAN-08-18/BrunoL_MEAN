@@ -1,5 +1,3 @@
-// server/controllers/tasks.js
-
 const mongoose = require('mongoose');
 const Task = mongoose.model('Task');
 
