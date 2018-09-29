@@ -5,16 +5,11 @@ var bodyParser = require('body-parser');
 var app = express();
 
 
-// app.use(express.static(path.join(__dirname + "./public")));
 app.use(bodyParser.json())
    .use(bodyParser.urlencoded({extended: true})); 
 
-
-// require the mongoose configuration file
 require('./server/config/mongoose');
 
-
-// set up static file path
 app.use(express.static(path.join(__dirname, '/public/dist')));
 
 
@@ -26,7 +21,6 @@ app.use('/api/rsvps', require('./server/config/rsvp'));
 app.use(require('./server/config/catchall'))
 
 
-
-app.listen(80, function() {
- console.log("listening on port 80"); 
+app.listen(8000, function() {
+ console.log("listening on port 8000"); 
 });
