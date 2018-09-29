@@ -1,9 +1,5 @@
 const mongoose = require('mongoose');
 const Task = mongoose.model('Task');
-
-// TODO:
-// Improve messages sent with data in response
-
 module.exports = function Route(app, server) {
 
     // GET '/tasks' - retrieve all tasks
@@ -17,9 +13,6 @@ module.exports = function Route(app, server) {
             };
         });
     });
-
-
-    // GET '/tasks/:id' - list task for that id
     app.get('/tasks/:id', function(req, res) {
         Task.find({ _id: req.params.id }, function(err, task_detail) {
             if(err) {
@@ -31,8 +24,6 @@ module.exports = function Route(app, server) {
         });
     });
 
-
-    // POST '/tasks' - create a task
     app.post('/tasks', function(req, res) {
         const new_task = new Task(req.body)
 
@@ -47,7 +38,6 @@ module.exports = function Route(app, server) {
         });
     });
 
-    // PUT '/tasks/:id' - update a task by id
     app.put('/tasks/:id', function(req, res) {
         Task.updateOne({ _id: req.params.id }, {title: req.body.title, description: req.body.description, completed: req.body.completed }, function(err, result) {
             if(err) {
@@ -60,18 +50,3 @@ module.exports = function Route(app, server) {
         });
     });
 
-
-    // DELETE '/tasks/:id/' - delete a task by id
-    app.delete('/tasks/:id', function(req, res) {
-        Task.deleteOne({ _id: req.params.id }, function(err, result) {
-            if(err) {
-                console.log(err);
-                res.json({});
-            } else {
-                console.log('Deleted id: ' + req.params.id)
-                res.json({});
-            };
-        });
-    });
-
-} // end export
